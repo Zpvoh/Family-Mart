@@ -1,0 +1,25 @@
+SALE1 SHOP1
+fruit
+sausage
+lunch
+milk
+
+SALE2 SHOP1
+fruit
+oden
+oden
+bun
+sausage
+bread
+bread
+
+SALE3 0.8 SHOP1
+yogurt
+bread
+milk
+fruit
+oden
+
+SALE4 0.5 SHOP1
+milk
+milk
