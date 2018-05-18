@@ -35,7 +35,7 @@ void Item::print(){
 }
 
 Item::~Item(){
-    cout<<name<<" has been destructed"<<endl;
+    //cout<<name<<" has been destructed"<<endl;
 }
 
 Item_list::Item_list(){
@@ -98,5 +98,5 @@ Item_list::~Item_list(){
             delete_item(name);
         }
     }
-    cout<<"Item_list has been destructed"<<endl;
+    //cout<<"Item_list has been destructed"<<endl;
 }

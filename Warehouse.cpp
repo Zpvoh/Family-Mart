@@ -3,7 +3,7 @@
 Warehouse::Warehouse(){
     size=25;
     list=new Item_list();
-    cout<<"Warehouse has been constructed"<<endl;
+    cout<<size<<" Warehouse has been constructed"<<endl;
 }
 
 Warehouse::Warehouse(int s, Item_list *l){
@@ -11,7 +11,7 @@ Warehouse::Warehouse(int s, Item_list *l){
     bool sentence2=l->get_size()<=s;
     size=(sentence1 && sentence2)?s:25;
     list=(sentence1 && sentence2)?l:new Item_list();
-    cout<<"Warehouse has been constructed"<<endl;
+    cout<<size<<" Warehouse has been constructed"<<endl;
 }
 
 void Warehouse::print(){
@@ -31,5 +31,5 @@ Item_list *Warehouse::get_list(){
 }
 
 Warehouse::~Warehouse(){
-    cout<<"Warehouse has been destructed"<<endl;
+    cout<<size<<" Warehouse has been destructed"<<endl;
 }

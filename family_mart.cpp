@@ -13,7 +13,7 @@ Instruct::Instruct(string typ, vector<string> paras){
 }
 
 Instruct::~Instruct(){
-    cout<<"[Instruct destructed]"<<endl;
+    //cout<<"[Instruct destructed]"<<endl;
 }
 
 Family_mart::Family_mart(){
@@ -126,7 +126,14 @@ void Family_mart::sell(string file_name){
             string type, shop_name;
             istringstream iss(line);
             iss>>type>>shop_name;
-            Shop *shop=shop_list[shop_name];
+            Shop *shop;
+            if(shop_list.count(shop_name)){
+                shop=shop_list[shop_name];
+            }else{
+                cout<<"There is no such shop and we are not able to sell these products!"<<endl;
+                break;
+            }
+
             vector<string> names;
             while(getline(file, line)){
                 istringstream iss(line);
@@ -145,7 +152,15 @@ void Family_mart::sell(string file_name){
             float discount;
             istringstream iss(line);
             iss>>type>>discount>>shop_name;
-            Shop *shop=shop_list[shop_name];
+
+            Shop *shop;
+            if(shop_list.count(shop_name)){
+                shop=shop_list[shop_name];
+            }else{
+                cout<<"There is no "<<shop_name<<" so we are not able to sell these products!"<<endl;
+                break;
+            }
+
             vector<string> names;
             while(getline(file, line)){
                 istringstream iss(line);

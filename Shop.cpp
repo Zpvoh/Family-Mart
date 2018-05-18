@@ -14,6 +14,7 @@ Shop::Shop(string n){
 }
 
 void Shop::init_warehouse(){
+    cout<<name<<" ";
     warehouse=new Warehouse();
     warehouse_num++;
 }
@@ -33,7 +34,9 @@ bool Shop::upgrade(){
         if(!new_size)
             return false;
 
+        cout<<name<<" ";
         Warehouse *new_house=new Warehouse(new_size, warehouse->get_list());
+        cout<<name<<" ";
         delete warehouse;
         warehouse=new_house;
 
@@ -54,7 +57,9 @@ bool Shop::downgrade(){
         return false;
 
     if(warehouse->get_actual_usage()<=new_size){
+        cout<<name<<" ";
         Warehouse *new_house=new Warehouse(new_size, warehouse->get_list());
+        cout<<name<<" ";
         delete warehouse;
         warehouse=new_house;
         downgrade();
@@ -102,7 +107,8 @@ void Shop::print(){
 Shop::~Shop(){
     if(warehouse!=nullptr){
         delete warehouse->get_list();
+        cout<<name<<" ";
         delete warehouse;
     }
-    cout<<name<<" has been destructed"<<endl;
+    //cout<<name<<" has been destructed"<<endl;
 }
